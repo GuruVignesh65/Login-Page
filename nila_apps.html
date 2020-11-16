@@ -1,0 +1,129 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+  .content {
+    float: left;
+    position: absolute;
+    left: 69px;
+    z-index: 1000;
+    padding: 5px;
+    color: black;
+    font-size: 35px;
+    font-weight: 300;
+    font-family: sans-serif;
+  }
+  .headingContent{
+    color: black;
+    font-size: 35px;
+    font-weight: 300;
+    font-family: sans-serif;
+  }
+  textarea:focus, input:focus{
+    outline: none;
+}
+</style>
+<div class="col-xs-12" style="height: 100%; padding: 0">
+  <div
+    class="col-xs-6"
+    style="height: 100%; padding: 0; box-shadow: 0px 0px 10px 0px lightgrey;overflow: hidden;"
+  >
+    <div style="height:20%;overflow: hidden;">
+        <img src="./Assets/firstImage.png"  style="width:25em;margin-left: -11em;margin-top: -22em;"/>
+    </div>
+    <div style="height:70%;">
+        <div class="col-xs-1" style="padding:0;margin-left: -21em;margin-top: 7em;">
+            <img src="./Assets/secondImage.png" style="width:25em;">
+        </div>
+        <div class="col-xs-11">
+            <img src="./Assets/system.png"  style="width: 17em;z-index:1000;margin-top: -4.5em;margin-left: 3em;"/>
+            <div class="content"> 
+            <p><span style="color:#00B39C">Your data </span></Your>will be securely stored <br />In our cloud and will be
+            accessed <br />only by you</p>
+            <div style="float:right">
+                <img src ="./Assets/leftSide.png" >
+                <img src ="./Assets/rightSide.png" >
+            </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:15%;">
+        <img src="./Assets/thirdImage.png" style="margin-top: -2.5em;margin-left: -7em;width: 21em;">
+    </div>
+</div>
+    <div class="col-xs-6" style="height: 100%; padding: 0">
+        <div style="height:15%; "></div>
+    <div style="height:5%; " class="headingContent col-xs-offset-4">
+        <div>
+           <p>My<span style="color:#00B39C">Company</span></p>
+        </div>
+    </div>
+    <div style="margin-top:3.5em">
+        <div  class="col-xs-offset-3">
+            <label style="font-weight:400;width: 24em;">Email</label></br>
+            <input type="text" id="userName" title="Enter the Email" style="width: 24em;height: 2.5em;border: 1px solid lightgray;border-radius: 5px;">
+        </div>
+        <div style="margin-top:1.5em;padding:0"  class="col-xs-offset-3 col-xs-9">
+            <label style="font-weight:400;width: 24em;">Password</label></br>
+            <div class="col-xs-12" style="padding:0;width: 24em;height: 2.5em;border: 1px solid lightgray;border-radius: 5px;">
+                <div class="col-xs-11" style="padding:0">
+                    <input type="password" id="passWord" title="Enter the Password" style="width:100%;border:none;height:100%" >
+                </div>
+                <div class="col-xs-1" style="padding:0;margin-top:9px;">
+                    <span class="fa fa-eye-slash"></span>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:7.5em;"  class="col-xs-offset-3">
+            <p style="opacity: 0.6;font-size: 11px;">
+                By signing up for my course prep, you agree to our <span style="color:cornflowerblue">Terms of use</span><br>
+                and <span style="color:cornflowerblue">Privacy Policy</span>
+            </p>
+        </div>
+        <div class="col-xs-offset-4" style="margin-top: 2.5em;" >
+                <button id="signIn" style="background-color: #00B39C;border:none;color:white;width: 12em;padding: 5px;margin-left: 29px;" disabled>
+                    Sign Up
+                </button>
+        </div>
+        <div class="col-xs-offset-3" style="margin-top: 1em;opacity:0.5;" >
+            <div style="margin-left: 3.5em;">
+        ----------------------<span style="border-radius: 50%; background-color:grey;color:white;padding: 3px;">or</span>----------------------</div>
+           </div>
+        </div>
+        <div class="col-xs-offset-4" style="margin-top: 1em;">
+         <div style="margin-left: 5.2em;">Sign Up with</div>
+        </div>
+        <div class="col-xs-offset-4" style="margin-top: 1em;"> 
+            <div class="col-xs-5" style="padding-left: 2.5em;">
+                <img src="./Assets/google.png" style="width: 3em;">
+                <img src="./Assets/facebook.png" style="float:right;width: 3em;">
+                <img>
+            </div>
+        </div>
+        <div class="col-xs-12" style="margin-top: 1em;"> 
+            <p style="text-align:center;">Already have an account? <a><span style="color:#00B39C">Login</span></a></p>
+        </div>
+    </div>
+  </div>
+</div>
+<script>
+    $(document).ready(function() {
+
+      function update() { 
+        var email=$('#userName').val().trim();
+        var password=$('#passWord').val().trim();
+        if(email != '' && password != ''){
+             $('#signIn').prop('disabled', false);
+         }else{
+            $('#signIn').prop('disabled', true);
+        }
+        setTimeout(update, 100);     
+      }
+      update();
+    });
+</script>
